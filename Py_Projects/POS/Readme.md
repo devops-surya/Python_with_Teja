@@ -10,7 +10,7 @@ The project runs in the terminal. It lets the user add inventory items, select i
 
 Imagine a small shop counter. Before billing a customer, the shop needs a list of items. After items are added to inventory, the cashier can select item ids, enter quantities, and generate the final bill.
 
-This project teaches that real-world process using only Python basics.
+The same real-world process is represented with simple Python basics.
 
 ---
 
@@ -205,13 +205,13 @@ These are terminal-style screenshots showing the full project flow.
 
 ---
 
-## Quick Examples
+## Workflow Examples
 
-Use these examples while explaining the project in class. Every action starts from the main menu so students understand where the feature begins.
+The examples below show the main workflows exactly as they appear in the terminal. Each workflow begins at the main menu and then moves into the selected feature.
 
-### Example 1 - Add a Product
+### Workflow 1 - Add a Product
 
-This example adds a pendrive to inventory.
+The inventory workflow starts by selecting option `2` from the main menu. The following input adds a pendrive to inventory.
 
 ```text
 ===== STORE POS =====
@@ -244,7 +244,7 @@ After this input, the item stored in `ITEMS` looks like this:
 }
 ```
 
-### Example 2 - Add One More Product
+### Workflow 2 - Add One More Product
 
 ```text
 ===== STORE POS =====
@@ -274,9 +274,9 @@ id      item name               price   stock
 2       Hard Disk               3499.0  10
 ```
 
-### Example 3 - Add Product to Cart
+### Workflow 3 - Add Product to Cart
 
-If the customer buys two pendrives:
+The sale workflow starts by selecting option `1` from the main menu. The following input adds two pendrives to the cart.
 
 ```text
 ===== STORE POS =====
@@ -305,7 +305,7 @@ CART = {
 }
 ```
 
-### Example 4 - Bill Calculation
+### Workflow 4 - Bill Calculation
 
 ```text
 Pendrive   = 599.0 x 2
@@ -322,9 +322,9 @@ Payment received. Thanks for shopping
 
 ---
 
-## Step-by-Step Screenshots
+## Step-by-Step Terminal Flow
 
-Follow these screens in order while presenting the project.
+The sequence below shows the complete application flow from start to exit.
 
 ---
 
@@ -562,13 +562,13 @@ Thank you. Goodbye
 
 ---
 
-## How to Explain Before Writing Code
+## Project Understanding Before Coding
 
-### Step 1 - Explain the Shop Problem
+### Step 1 - Understand the Shop Problem
 
 A shop needs a simple billing system. The system must know what items are available and how much each item costs.
 
-### Step 2 - Explain Inventory
+### Step 2 - Understand Inventory
 
 Inventory is a list. Each item in the list is a dictionary.
 
@@ -584,7 +584,7 @@ Each dictionary stores:
 - price
 - quantity
 
-### Step 3 - Explain Cart
+### Step 3 - Understand Cart
 
 The cart stores what the customer wants to buy.
 
@@ -594,7 +594,7 @@ CART = {}
 
 The item id is the key. The selected quantity is the value.
 
-### Step 4 - Explain Billing
+### Step 4 - Understand Billing
 
 For each item in the cart:
 
@@ -604,7 +604,7 @@ item total = item price x selected quantity
 
 Then all item totals are added together.
 
-### Step 5 - Explain Menus
+### Step 5 - Understand Menus
 
 The project has one main menu:
 
@@ -700,7 +700,7 @@ Then use:
 
 This POS project is a simple but useful Python practice project.
 
-Students first understand the real billing process, then convert each step into code:
+The real billing process is converted into small Python parts:
 
 - inventory becomes a list
 - item details become dictionaries
