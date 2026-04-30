@@ -1,36 +1,36 @@
-"""This module will have functions for sales and billing
-"""
+"""Sales and billing helper functions for the POS application."""
 from inventory import get_item
 
 CART: dict = {}
 
 def add_item_to_cart(item_id:int, quantity:int) -> None:
-    """Adds the items to the cart
+    """Add an item to the cart.
 
     Args:
-        item_id (int): item_id
-        quantity (int): quantity
+        item_id (int): Item id.
+        quantity (int): Selected quantity.
     """
     # todo: Add items to the cart only if quantity is less than or equal to 
     # what is available in inventory
     CART[item_id] = quantity
 
 def remove_item_from_cart(item_id:int) -> None:
-    """
-    Removes the items from cart
+    """Remove an item from the cart.
 
     Args:
-        item_id (int): item_id
+        item_id (int): Item id.
     """
     del CART[item_id]
 
 def generate_bill() -> int|float:
-    total_amt = 0
+    """Calculate the total bill amount."""
+    bill_amount = 0
     for item_id, quantity in CART.items():
         item = get_item(item_id)
-        total_amt += item['price'] * quantity
-    return total_amt
+        bill_amount += item['price'] * quantity
+    return bill_amount
 
 def finish_transaction():
+    """Clear the cart after payment."""
     CART.clear()
-    print("Thanks for shopping")
+    print("Payment received. Thanks for shopping")
