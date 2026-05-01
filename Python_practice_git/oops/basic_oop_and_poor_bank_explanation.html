@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Basic OOP and Bank Example</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#17202a;font:16px/1.55 system-ui,Segoe UI,Arial,sans-serif}main{max-width:1120px;margin:auto;padding:24px}.hero{background:#17202a;color:#fff;padding:30px;border-radius:8px}.hero p{max-width:850px}h1{font-size:34px;margin:0 0 8px;line-height:1.15}h2{margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid #dce4ef;font-size:25px}h3{margin:0 0 8px;font-size:18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}.card,.panel,.code,.flow{background:#fff;border:1px solid #dce4ef;border-radius:8px;padding:15px}.blue{border-left:5px solid #3b73d9}.green{border-left:5px solid #21866b}.pink{border-left:5px solid #a24f94}.gold{border-left:5px solid #c28a13}.warn{background:#fff6e8;border-left:5px solid #c97712}.code{background:#101827;color:#eef2f7;overflow:auto}pre,code{font-family:Consolas,Monaco,monospace}pre{margin:0;white-space:pre-wrap}.tag{display:inline-block;background:#eef3f8;border:1px solid #d5dfeb;border-radius:6px;padding:3px 7px;margin:2px}.flow{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.node{background:#fff7dc;border:1px solid #ddb84d;border-radius:8px;padding:10px 12px}.arrow{font-weight:800;color:#53616f}.visual{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center}.big{font-size:34px;color:#c97712;text-align:center}table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden}th,td{border:1px solid #dce4ef;padding:9px;text-align:left;vertical-align:top}th{background:#eef3f8}.money{font-weight:800;color:#116149}.small{font-size:14px;color:#53616f}.callout{font-weight:700;color:#17202a}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:760px){main{padding:14px}.visual,.two{grid-template-columns:1fr}.big{transform:rotate(90deg)}}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+<h1>Basic OOP and Bank Example</h1>
+<p>This page explains the concepts from <b>basic_oop.ipynb</b> first, then connects them to the practical <b>bank_example/main.py</b> program. It is written for clear presentation: definition, structure, how to call, and what happens in memory.</p>
+</section>
+
+<h2>1. What OOP Means</h2>
+<div class="grid">
+<div class="card blue"><h3>OOP</h3><p><b>Object Oriented Programming</b> is a way of writing code by modeling real-world things as objects.</p></div>
+<div class="card green"><h3>Example Object</h3><p>A bank account is an object because it has data and behavior.</p><span class="tag">balance</span><span class="tag">account number</span><span class="tag">customer name</span></div>
+<div class="card pink"><h3>Example Behavior</h3><p>The bank account can perform actions.</p><span class="tag">withdraw</span><span class="tag">deposit</span><span class="tag">transfer</span></div>
+</div>
+
+<h2>2. The Main OOP Flow</h2>
+<div class="flow">
+<div class="node">1. Design a class</div><div class="arrow">-&gt;</div>
+<div class="node">2. Create objects</div><div class="arrow">-&gt;</div>
+<div class="node">3. work with object</div><div class="arrow"></div>
+</div>
+<p class="small">This is the full learning path used in the notebook.</p>
+
+<h2>3. Class and Object</h2>
+<div class="visual">
+<div class="card blue">
+<h3>Class = Blueprint</h3>
+<p>A class is a design. It tells Python what data and methods future objects should have.</p>
+<div class="code"><pre>class BankAccount:
+    pass</pre></div>
+</div>
+<div class="big">-&gt;</div>
+<div class="card green">
+<h3>Object = Real Instance</h3>
+<p>An object is created from a class. It is the real item we work with.</p>
+<div class="code"><pre>user1_account = BankAccount()</pre></div>
+</div>
+</div>
+
+<h2>4. Naming Conventions</h2>
+<table>
+<tr><th>Element</th><th>Convention</th><th>Example</th></tr>
+<tr><td>Class</td><td>PascalCase</td><td><code>BankAccount</code>, <code>UserAccount</code></td></tr>
+<tr><td>Variable</td><td>snake_case</td><td><code>user_name</code>, <code>ram_account</code></td></tr>
+<tr><td>Method</td><td>snake_case</td><td><code>withdraw()</code>, <code>transfer()</code></td></tr>
+<tr><td>Function</td><td>snake_case</td><td><code>calculate_sum()</code></td></tr>
+<tr><td>Constant</td><td>UPPER_CASE</td><td><code>MAX_LIMIT</code></td></tr>
+<tr><td>Module/File</td><td>lowercase</td><td><code>main.py</code></td></tr>
+<tr><td>Package/Folder</td><td>lowercase</td><td><code>bank_example/</code></td></tr>
+</table>
+
+<h2>5. Members and Methods</h2>
+<div class="grid">
+<div class="card green">
+<h3>Members / Attributes</h3>
+<p>Members are data stored in the class or object. They are like variables inside OOP.</p>
+<span class="tag">balance</span><span class="tag">account_number</span><span class="tag">customer_name</span>
+</div>
+<div class="card blue">
+<h3>Methods</h3>
+<p>Methods are functions written inside a class. They describe what the object can do.</p>
+<span class="tag">withdraw()</span><span class="tag">deposit()</span><span class="tag">transfer()</span>
+</div>
+</div>
+
+<h2>6. Instance Level Method Calling</h2>
+<p>Instance level means <b>object level</b>. An instance method works on one specific object and uses <code>self</code>.</p>
+<div class="code"><pre>class BankAccount:
+    def withdraw(self, amount: float):
+        pass
+
+    def transfer(self, amount: float, account_number: str):
+        pass</pre></div>
+<p class="callout">How to call instance methods:</p>
+<div class="code"><pre>user1_account = BankAccount()
+user1_account.withdraw(500)
+user1_account.transfer(500, "8787878787")</pre></div>
+
+<h2>7. Class Level Method Calling</h2>
+<p>A class method belongs to the class. It can be called without creating an object.</p>
+<div class="code"><pre>class BankAccount:
+    @classmethod
+    def bank_name(cls) -&gt; str:
+        return "HDFC"
+
+BankAccount.bank_name()</pre></div>
+<p>Output:</p>
+<div class="code"><pre>"HDFC"</pre></div>
+
+<h2>8. Class Level Member</h2>
+<p>A class level member is stored on the class itself. It is useful for common data shared by all objects.</p>
+<div class="code"><pre>class NewBankAccount:
+    bank_name: str = "HDFC"
+
+NewBankAccount.bank_name</pre></div>
+<p>Output:</p>
+<div class="code"><pre>"HDFC"</pre></div>
+
+<h2>9. Constructor / Customizer Before Instance Members</h2>
+<div class="card gold">
+<h3>Important: <code>__init__</code> prepares every object</h3>
+<p>Before we call instance level members like <code>user3_account.balance</code>, the object needs those members to be created. The constructor, written as <code>__init__</code>, runs automatically when the object is created. You can think of it as the object customizer because it sets the starting data for that object.</p>
+</div>
+<div class="code"><pre>class NewBankAccount:
+    bank_name: str = "HDFC"
+
+    def __init__(self):
+        self.balance = 0
+        self.account_number = ""
+        self.customer_name = ""</pre></div>
+<div class="flow">
+<div class="node">NewBankAccount()</div><div class="arrow">-&gt;</div>
+<div class="node">__init__ runs</div><div class="arrow">-&gt;</div>
+<div class="node">balance, account_number, customer_name are created</div>
+</div>
+
+<h2>10. Instance Level Members</h2>
+<p>Instance level members belong to each object. Every object gets its own copy.</p>
+<div class="code"><pre>user3_account = NewBankAccount()
+
+print(user3_account.balance)
+print(user3_account.account_number)
+print(user3_account.customer_name)</pre></div>
+<table>
+<tr><th>Expression</th><th>Meaning</th><th>Value from notebook example</th></tr>
+<tr><td><code>user3_account.balance</code></td><td>Balance stored in this object</td><td><code>0</code></td></tr>
+<tr><td><code>user3_account.account_number</code></td><td>Account number stored in this object</td><td><code>""</code></td></tr>
+<tr><td><code>user3_account.customer_name</code></td><td>Customer name stored in this object</td><td><code>""</code></td></tr>
+</table>
+
+<h2>11. Constructor With Custom Values</h2>
+<p>The constructor can also accept values from outside. This is how each object gets different data.</p>
+<div class="code"><pre>class NewBankAccount:
+    bank_name: str = "HDFC"
+
+    def __init__(self, balance: float, account_number: str, customer_name: str):
+        self.balance = balance
+        self.account_number = account_number
+        self.customer_name = customer_name
+
+    def withdraw(self, amount: float) -&gt; float:
+        self.balance -= amount
+        return self.balance</pre></div>
+<div class="code"><pre>user4 = NewBankAccount(
+    balance=10000,
+    account_number="9865549",
+    customer_name="ramesh"
+)
+
+user4.withdraw(2000)
+user4.balance</pre></div>
+<p>Final balance is <b class="money">8000</b>.</p>
+
+<h2>12. Class Level vs Instance Level</h2>
+<table>
+<tr><th>Concept</th><th>Belongs to</th><th>How to call</th><th>Example</th></tr>
+<tr><td>Class level member</td><td>Class</td><td>Class name</td><td><code>NewBankAccount.bank_name</code></td></tr>
+<tr><td>Class level method</td><td>Class</td><td>Class name</td><td><code>BankAccount.bank_name()</code></td></tr>
+<tr><td>Instance level member</td><td>Object</td><td>Object name</td><td><code>user4.balance</code></td></tr>
+<tr><td>Instance level method</td><td>Object</td><td>Object name</td><td><code>user4.withdraw(2000)</code></td></tr>
+</table>
+
+<h2>13. What <code>self</code> Means</h2>
+<p><code>self</code> means the current object. When we call a method using an object, Python passes that object into the method as <code>self</code>.</p>
+<div class="code"><pre>user4.withdraw(2000)
+
+# Python understands it like:
+NewBankAccount.withdraw(user4, 2000)</pre></div>
+<p>So inside <code>withdraw</code>, <code>self.balance</code> means <code>user4.balance</code>.</p>
+
+<h2>14. Object Relationships</h2>
+<div class="grid">
+<div class="card blue"><h3>Inheritance: is-a</h3><p>Inheritance means one class is a type of another class.</p><p><code>SavingsAccount</code> is a <code>BankAccount</code>.</p></div>
+<div class="card green"><h3>Composition: has-a</h3><p>Composition means one object contains or uses another object.</p><p><code>Customer</code> has a <code>BankAccount</code>.</p></div>
+</div>
+
+<h2>15. Bank Example: main.py</h2>
+<p>The bank example applies the same OOP concepts in a small working program. It creates two bank account objects and transfers money from RAM to SHYAM.</p>
+<div class="code"><pre>class BankAccount:
+    def __init__(self, balance: float, number: str, name: str):
+        self.balance = balance
+        self.number = number
+        self.name = name
+
+    def withdraw(self, amount: float):
+        self.balance -= amount
+
+    def deposit(self, amount: float):
+        self.balance += amount
+
+    def transfer(self, account, amount: float):
+        self.withdraw(amount)
+        account.deposit(amount)</pre></div>
+
+<h2>16. BankAccount Structure in main.py</h2>
+<div class="grid">
+<div class="card green"><h3>Instance Members</h3><p><code>self.balance</code>: account balance</p><p><code>self.number</code>: account number</p><p><code>self.name</code>: account holder name</p></div>
+<div class="card blue"><h3>Instance Methods</h3><p><code>withdraw(amount)</code>: subtract money</p><p><code>deposit(amount)</code>: add money</p><p><code>transfer(account, amount)</code>: move money to another account</p></div>
+</div>
+
+<h2>17. Objects Created in the Bank Example</h2>
+<div class="code"><pre>ram_account = BankAccount(balance=1000000, number="99999", name="RAM")
+shyam_account = BankAccount(balance=1000, number="11111", name="SHYAM")</pre></div>
+<table>
+<tr><th>Object</th><th>Name</th><th>Account Number</th><th>Starting Balance</th></tr>
+<tr><td><code>ram_account</code></td><td>RAM</td><td>99999</td><td class="money">1000000</td></tr>
+<tr><td><code>shyam_account</code></td><td>SHYAM</td><td>11111</td><td class="money">1000</td></tr>
+</table>
+
+<h2>18. Transfer Flow</h2>
+<div class="visual">
+<div class="card green"><h3>RAM Account</h3><p>Before: <b>1000000</b></p><p>Withdraw: <b>10000</b></p><p>After: <b class="money">990000</b></p></div>
+<div class="big">-&gt;</div>
+<div class="card green"><h3>SHYAM Account</h3><p>Before: <b>1000</b></p><p>Deposit: <b>10000</b></p><p>After: <b class="money">11000</b></p></div>
+</div>
+<div class="flow">
+<div class="node">ram_account.transfer(shyam_account, 10000)</div><div class="arrow">-&gt;</div>
+<div class="node">ram_account.withdraw(10000)</div><div class="arrow">-&gt;</div>
+<div class="node">shyam_account.deposit(10000)</div>
+</div>
+
+<h2>19. Complete Bank Demo Block</h2>
+<div class="code"><pre>if __name__ == "__main__":
+    ram_account = BankAccount(balance=1000000, number="99999", name="RAM")
+    shyam_account = BankAccount(balance=1000, number="11111", name="SHYAM")
+
+    print("Before donation")
+    print(f"Ram's balance {ram_account.balance} Shyam's balance {shyam_account.balance}")
+
+    ram_account.transfer(shyam_account, 10000)
+
+    print("After donation")
+    print(f"Ram's balance {ram_account.balance} Shyam's balance {shyam_account.balance}")</pre></div>
+<table>
+<tr><th>Code</th><th>Purpose</th></tr>
+<tr><td><code>if __name__ == "__main__"</code></td><td>Runs this block only when the file is executed directly.</td></tr>
+<tr><td><code>BankAccount(...)</code></td><td>Creates real account objects from the class.</td></tr>
+<tr><td><code>transfer(...)</code></td><td>Uses existing methods to move money safely in one place.</td></tr>
+<tr><td><code>print(...)</code></td><td>Shows before and after balances.</td></tr>
+</table>
+
+<h2>20. Production Improvement Idea</h2>
+<div class="card warn"><h3>Validation should be added in real banking code</h3><p>The current code is excellent for understanding OOP basics. For production code, withdrawals should reject invalid amounts and insufficient balance.</p></div>
+<div class="code"><pre>def withdraw(self, amount: float):
+    if amount &lt;= 0:
+        raise ValueError("Amount must be positive")
+
+    if amount &gt; self.balance:
+        raise ValueError("Insufficient balance")
+
+    self.balance -= amount</pre></div>
+
+<h2>21. Final Summary</h2>
+<div class="flow">
+<div class="node">Class = blueprint</div><div class="arrow">-&gt;</div>
+<div class="node">Object = real account</div><div class="arrow">-&gt;</div>
+<div class="node">Members = data</div><div class="arrow">-&gt;</div>
+<div class="node">Methods = actions</div><div class="arrow">-&gt;</div>
+<div class="node">Constructor = object setup</div>
+</div>
+<p class="small">One class can create many objects. Each object has its own data, but all objects can use the same methods defined in the class.</p>
+</main>
+</body>
+</html>

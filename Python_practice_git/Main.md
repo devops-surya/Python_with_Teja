@@ -265,5 +265,33 @@ c....
 * string 
 
 
-## March -17 , 20 : POS 
+## March -17 , 20,23 : POS 
 * In D:\Devops\Python\Py_Projects\POS
+
+## March - 24 : OOPS intro : D:\Devops\Python\Python_practice_git\oops\basic_oop.ipynb
+* Everything is an object 
+
+## March - 25 : 
+* Calss , object , methods , class level methods , instance level methods , class level functions, instance level functions 
+
+* Normal Cases (General Usage)
+
+| Element  | Convention | One-line Example            |
+| -------- | ---------- | --------------------------- |
+| Class    | PascalCase | `class UserAccount: pass`   |
+| Variable | snake_case | `user_name = "teja"`        |
+| Method   | snake_case | `def get_user(): pass`      |
+| Function | snake_case | `def calculate_sum(): pass` |
+| Constant | UPPER_CASE | `MAX_LIMIT = 100`           |
+| Module   | lowercase  | `file: payment_service.py`  |
+| Package  | lowercase  | `folder: services/`         |
+
+* Special Cases (Convention-based / Internal Use)
+
+| Element        | Convention            | One-line Example                  |
+| -------------- | --------------------- | --------------------------------- |
+| Protected      | _single_leading       | `self._balance = 0`               |
+| Private        | __double_leading      | `self.__pin = 1234`               |
+| Magic (Dunder) | **double_both_sides** | `def __str__(self): return "obj"` |
+| Temporary Var  | single underscore `_` | `for _ in range(5): pass`         |
+| Avoid Keywords | trailing underscore   | `class_ = "test"`                 |
